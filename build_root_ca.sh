@@ -1,5 +1,6 @@
 #!/bin/bash
 # Root CA Directory Structure
+rm -rf root-ca
 mkdir root-ca
 cp root-ca.conf root-ca/
 cp sub-ca.conf root-ca/
@@ -53,7 +54,7 @@ openssl ca \
   -days 30
 
 openssl ocsp \
-  -port 9080
+  -port 9080 \
   -index db/index \
   -rsigner root-ocsp.crt \
   -rkey private/root-ocsp.key \
