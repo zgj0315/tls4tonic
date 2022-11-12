@@ -12,7 +12,7 @@ openssl req -nodes \
           -days 3650 \
           -newkey rsa:4096 \
           -keyout rsa/root/ca.key \
-          -out rsa/root/ca.cert \
+          -out rsa/root/ca.crt \
           -sha256 \
           -batch \
           -subj "/CN=After90 RSA CA"
@@ -35,8 +35,8 @@ openssl req -nodes \
 
 openssl x509 -req \
           -in rsa/intermediate/inter.csr \
-          -out rsa/intermediate/inter.cert \
-          -CA rsa/root/ca.cert \
+          -out rsa/intermediate/inter.crt \
+          -CA rsa/root/ca..cr t \
           -CAkey rsa/root/ca.key \
           -sha256 \
           -days 3650 \
@@ -45,8 +45,8 @@ openssl x509 -req \
 
 openssl x509 -req \
           -in rsa/server/server.csr \
-          -out rsa/server/server.cert \
-          -CA rsa/intermediate/inter.cert \
+          -out rsa/server/server.crt \
+          -CA rsa/intermediate/inter.crt \
           -CAkey rsa/intermediate/inter.key \
           -sha256 \
           -days 2000 \
