@@ -23,7 +23,6 @@ openssl x509 -req \
     -signkey $home_ca/private/root-ca.key \
     -sha256 \
     -days 4383 \
-    -CAserial $home_ca/db/serial \
     -extensions root_ca_ext -extfile build-ca.conf
 
 # Subordinate CA Generation
