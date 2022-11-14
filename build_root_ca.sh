@@ -8,8 +8,8 @@ cd root-ca
 mkdir certs db private
 chmod 700 private
 touch db/index
-openssl rand -hex 16  > db/serial
-echo 1001 > db/crlnumber
+openssl rand -hex 16 >db/serial
+echo 1001 >db/crlnumber
 
 # Root CA Generation
 openssl req -new \
