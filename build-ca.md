@@ -1,9 +1,8 @@
 ```shell
 # Root CA Directory Structure
-home_ca="home-ca"
-rm -rf $home_ca
-mkdir $home_ca
-cd $home_ca
+rm -rf home-ca
+mkdir home-ca
+cd home-ca
 mkdir certs db private
 chmod 700 private
 touch db/index
