@@ -1,4 +1,5 @@
 #!/bin/bash
+set -xe
 home_ca="home-ca"
 rm -rf $home_ca
 mkdir -p $home_ca/certs $home_ca/db $home_ca/private
