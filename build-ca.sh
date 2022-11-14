@@ -39,7 +39,7 @@ openssl x509 -req \
     -set_serial 123 \
     -extensions v3_inter -extfile ../openssl.cnf
 
-# DJ Ca Generation
+# DJ CA Generation
 openssl req -nodes \
     -newkey rsa:2048 \
     -keyout private/dj-ca.key \
