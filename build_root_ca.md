@@ -1,4 +1,4 @@
-#!/bin/bash
+```shell
 # Root CA Directory Structure
 rm -rf root-ca
 mkdir root-ca
@@ -66,3 +66,5 @@ openssl ocsp \
   -CAfile root-ca.crt \
   -cert root-ocsp.crt \
   -url http://127.0.0.1:9080
+
+```

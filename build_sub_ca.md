@@ -1,4 +1,4 @@
-#!/bin/bash
+```shell
 # Subordinate CA Generation
 openssl req -new \
   -config sub-ca.conf \
@@ -23,3 +23,5 @@ openssl ca \
   -in client.csr \
   -out client.crt \
   -extensions client_ext
+
+```
