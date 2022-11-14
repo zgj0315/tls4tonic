@@ -9,16 +9,6 @@ openssl rand -hex 16 >$home_ca/db/serial
 echo 1001 >$home_ca/db/crlnumber
 
 # Root CA Generation
-# openssl req -nodes \
-#     -x509 \
-#     -days 3650 \
-#     -newkey rsa:4096 \
-#     -keyout $home_ca/private/root-ca.key \
-#     -out $home_ca/root-ca.crt \
-#     -sha256 \
-#     -batch \
-#     -subj "/CN=Root CA"
-
 openssl req -nodes \
     -newkey rsa:4096 \
     -keyout $home_ca/private/root-ca.key \
