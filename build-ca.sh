@@ -9,15 +9,32 @@ openssl rand -hex 16 >$home_ca/db/serial
 echo 1001 >$home_ca/db/crlnumber
 
 # Root CA Generation
+# openssl req -nodes \
+#     -x509 \
+#     -days 3650 \
+#     -newkey rsa:4096 \
+#     -keyout $home_ca/private/root-ca.key \
+#     -out $home_ca/root-ca.crt \
+#     -sha256 \
+#     -batch \
+#     -subj "/CN=Root CA"
+
 openssl req -nodes \
-    -x509 \
-    -days 3650 \
     -newkey rsa:4096 \
     -keyout $home_ca/private/root-ca.key \
-    -out $home_ca/root-ca.crt \
+    -out $home_ca/root-ca.csr \
     -sha256 \
     -batch \
     -subj "/CN=Root CA"
+
+openssl x509 -req \
+    -in $home_ca/root-ca.csr \
+    -out $home_ca/root-ca.crt \
+    -signkey $home_ca/private/root-ca.key \
+    -sha256 \
+    -days 3650 \
+    -set_serial 123 \
+    -extensions root_ca_ext -extfile build-ca.conf
 
 # Subordinate CA Generation
 openssl req -nodes \
@@ -35,7 +52,7 @@ openssl x509 -req \
     -CAkey $home_ca/private/root-ca.key \
     -sha256 \
     -days 3650 \
-    -set_serial 123 \
+    -set_serial 456 \
     -extensions sub_ca_ext -extfile build-ca.conf
 
 # DJ CA Generation
@@ -54,5 +71,5 @@ openssl x509 -req \
     -CAkey $home_ca/private/sub-ca.key \
     -sha256 \
     -days 2000 \
-    -set_serial 456 \
+    -set_serial 789 \
     -extensions dj_ca_ext -extfile build-ca.conf
