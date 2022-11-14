@@ -36,7 +36,7 @@ openssl req -nodes \
 openssl x509 -req \
           -in rsa/intermediate/inter.csr \
           -out rsa/intermediate/inter.crt \
-          -CA rsa/root/ca..cr t \
+          -CA rsa/root/ca.crt \
           -CAkey rsa/root/ca.key \
           -sha256 \
           -days 3650 \
