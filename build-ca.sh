@@ -22,7 +22,7 @@ openssl x509 -req \
     -out $home_ca/root-ca.crt \
     -signkey $home_ca/private/root-ca.key \
     -sha256 \
-    -days 3650 \
+    -days 4383 \
     -set_serial 123 \
     -extensions root_ca_ext -extfile build-ca.conf
 
@@ -41,7 +41,7 @@ openssl x509 -req \
     -CA $home_ca/root-ca.crt \
     -CAkey $home_ca/private/root-ca.key \
     -sha256 \
-    -days 3650 \
+    -days 4383 \
     -set_serial 456 \
     -extensions sub_ca_ext -extfile build-ca.conf
 
@@ -60,6 +60,6 @@ openssl x509 -req \
     -CA $home_ca/sub-ca.crt \
     -CAkey $home_ca/private/sub-ca.key \
     -sha256 \
-    -days 2000 \
+    -days 4383 \
     -set_serial 789 \
     -extensions dj_ca_ext -extfile build-ca.conf
