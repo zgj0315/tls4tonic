@@ -37,7 +37,7 @@ openssl x509 -req \
     -sha256 \
     -days 3650 \
     -set_serial 123 \
-    -extensions v3_inter -extfile ../openssl.cnf
+    -extensions sub_ca_ext -extfile ../build-ca.conf
 
 # DJ CA Generation
 openssl req -nodes \
@@ -56,4 +56,4 @@ openssl x509 -req \
     -sha256 \
     -days 2000 \
     -set_serial 456 \
-    -extensions v3_server -extfile ../openssl.cnf
+    -extensions dj_ca_ext -extfile ../build-ca.conf
