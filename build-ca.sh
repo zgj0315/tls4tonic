@@ -28,7 +28,7 @@ openssl x509 -req \
 
 # Subordinate CA Generation
 openssl req -nodes \
-    -newkey rsa:3072 \
+    -newkey rsa:2048 \
     -keyout $home_ca/private/sub-ca.key \
     -out $home_ca/sub-ca.csr \
     -sha256 \
