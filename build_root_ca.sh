@@ -42,7 +42,7 @@ openssl ca \
 # Create a Certificate for OCSP Signing
 openssl req -new \
   -newkey rsa:2048 \
-  -subj "/C=GB/O=Example/CN=OCSP Root Responder" \
+  -subj "/C=CN/O=After90/CN=OCSP Root Responder" \
   -keyout private/root-ocsp.key \
   -out root-ocsp.csr
 
