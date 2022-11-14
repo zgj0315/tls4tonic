@@ -34,4 +34,16 @@ openssl ca \
   -out sub-ca.crt \
   -extensions sub_ca_ext
 
+# DJ CA Generation
+openssl req -new \
+  -config ../dj-ca.conf \
+  -out dj-ca.csr \
+  -keyout private/dj-ca.key
+
+openssl ca \
+  -config ../sub-ca.conf \
+  -in dj-ca.csr \
+  -out dj-ca.crt \
+  -extensions dj_ca_ext
+
 ```
