@@ -43,6 +43,6 @@ openssl ca \
   -config ../sub-ca.conf \
   -in dj-ca.csr \
   -out dj-ca.crt \
-  -extensions dj_ca_ext
+  -extensions server_ca_ext
 
 ```
