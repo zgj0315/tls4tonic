@@ -1,6 +1,6 @@
 # Make Cert For Tonic TLS
 ## 1 工程说明
-### 1.1 build.sh
+### 1.1 build-ca.sh
 生成证书脚本  
 执行build-ca.sh，会在home-ca目录中生成对应证书文件
 
