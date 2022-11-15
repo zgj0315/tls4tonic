@@ -15,11 +15,11 @@ dj-ca.key: 服务器私钥
 ### 1.3 home-ca/csrs
 证书签名申请文件目录
 
-### 1.4 rsa/server
+### 1.4 home-ca/crts
 证书目录
 
 ## 2 tonic框架证书说明
-Tonic框架中，支持TLS证书，其中涉及到的三个文件制作方法
+Tonic框架中，支持TLS证书，其中涉及到的三个文件制作方法  
 文件地址：https://github.com/hyperium/tonic/tree/master/examples/data/tls  
 工程地址：https://github.com/hyperium/tonic/tree/master/examples/src/tls
 
