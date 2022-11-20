@@ -47,19 +47,19 @@ openssl x509 -req \
 # DJ CA Generation
 openssl req -nodes \
     -newkey rsa:2048 \
-    -keyout $home_ca/private/dj-ca.key \
-    -out $home_ca/csrs/dj-ca.csr \
+    -keyout $home_ca/private/torsen-ca.key \
+    -out $home_ca/csrs/torsen-ca.csr \
     -sha256 \
     -batch \
-    -subj "/CN=DJ CA"
+    -subj "/CN=Torsen CA"
 
 openssl x509 -req \
-    -in $home_ca/csrs/dj-ca.csr \
-    -out $home_ca/crts/dj-ca.crt \
+    -in $home_ca/csrs/torsen-ca.csr \
+    -out $home_ca/crts/torsen-ca.crt \
     -CA $home_ca/crts/sub-ca.crt \
     -CAkey $home_ca/private/sub-ca.key \
     -sha256 \
     -days 4383 \
     -CAcreateserial \
-    -extensions dj_ca_ext \
+    -extensions torsen_ca_ext \
     -extfile build-ca.conf
